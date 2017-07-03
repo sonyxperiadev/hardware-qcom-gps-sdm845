@@ -54,6 +54,8 @@ LOCAL_COPY_HEADERS:= \
     LocAdapterProxyBase.h \
     SystemStatus.h
 
+LOCAL_CFLAGS += $(GNSS_CFLAGS)
+
 include $(BUILD_SHARED_LIBRARY)
 
 endif # not BUILD_TINY_ANDROID

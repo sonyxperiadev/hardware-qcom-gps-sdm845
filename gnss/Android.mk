@@ -36,6 +36,8 @@ LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/libloc_pla \
     $(TARGET_OUT_HEADERS)/liblocation_api
 
+LOCAL_CFLAGS += $(GNSS_CFLAGS)
+
 LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)

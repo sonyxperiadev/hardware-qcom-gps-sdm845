@@ -30,6 +30,8 @@
 #define LOG_TAG "LocSvc_APIClientBase"
 
 #include <log_util.h>
+#include <platform_lib_log_util.h>
+#include <inttypes.h>
 #include <loc_cfg.h>
 #include "LocationAPIClientBase.h"
 

@@ -28,6 +28,7 @@
  */
 #define LOG_TAG "LocSvc_GnssAdapter"
 
+#include <inttypes.h>
 #include <sys/stat.h>
 #include <errno.h>
 #include <ctype.h>
@@ -2855,7 +2856,7 @@ bool GnssAdapter::getDebugReport(GnssDebugReport& r)
                      reports.mTimeAndClock.back().mLeapSecUnc)*1000);
         r.mTime.frequencyUncertaintyNsPerSec =
             (float)(reports.mTimeAndClock.back().mClockFreqBiasUnc);
-        LOC_LOGV("getDebugReport - timeestimate=%ld unc=%f frequnc=%f",
+        LOC_LOGV("getDebugReport - timeestimate=%" PRIu64 " unc=%f frequnc=%f",
                 r.mTime.timeEstimate,
                 r.mTime.timeUncertaintyNs, r.mTime.frequencyUncertaintyNsPerSec);
     }
@@ -2869,7 +2870,7 @@ bool GnssAdapter::getDebugReport(GnssDebugReport& r)
     convertSatelliteInfo(r.mSatelliteInfo, GNSS_SV_TYPE_QZSS, reports);
     convertSatelliteInfo(r.mSatelliteInfo, GNSS_SV_TYPE_BEIDOU, reports);
     convertSatelliteInfo(r.mSatelliteInfo, GNSS_SV_TYPE_GALILEO, reports);
-    LOC_LOGV("getDebugReport - satellite=%lu", r.mSatelliteInfo.size());
+    LOC_LOGV("getDebugReport - satellite=%zu", r.mSatelliteInfo.size());
 
     return true;
 }
