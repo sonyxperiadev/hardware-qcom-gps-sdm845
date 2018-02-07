@@ -269,7 +269,7 @@ static void convertGnssData(GnssMeasurementsNotification& in,
 {
     out.measurementCount = in.count;
     if (out.measurementCount > static_cast<uint32_t>(GnssMax::SVS_COUNT)) {
-        LOC_LOGW("%s]: Too many measurement %zd. Clamps to %d.",
+        LOC_LOGW("%s]: Too many measurement %u. Clamps to %d.",
                 __FUNCTION__,  out.measurementCount, GnssMax::SVS_COUNT);
         out.measurementCount = static_cast<uint32_t>(GnssMax::SVS_COUNT);
     }
