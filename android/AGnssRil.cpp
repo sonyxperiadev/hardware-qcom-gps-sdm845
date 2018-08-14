@@ -39,7 +39,7 @@ namespace implementation {
 
 static bool sendConnectionEvent(const bool connected, const uint8_t type);
 
-AGnssRil::AGnssRil(Gnss* gnss) : mGnss(gnss) {
+AGnssRil::AGnssRil(Gnss* /*gnss*/) {
     ENTRY_LOG_CALLFLOW();
 }
 
@@ -47,7 +47,7 @@ AGnssRil::~AGnssRil() {
     ENTRY_LOG_CALLFLOW();
 }
 
-Return<bool> AGnssRil::updateNetworkState(bool connected, NetworkType type, bool roaming) {
+Return<bool> AGnssRil::updateNetworkState(bool connected, NetworkType type, bool /*roaming*/) {
     ENTRY_LOG_CALLFLOW();
 
     // for XTRA

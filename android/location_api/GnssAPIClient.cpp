@@ -378,7 +378,7 @@ void GnssAPIClient::onGnssNmeaCb(GnssNmeaNotification gnssNmeaNotification)
         auto r = mGnssCbIface->gnssNmeaCb(
             static_cast<GnssUtcTime>(gnssNmeaNotification.timestamp), nmeaString);
         if (!r.isOk()) {
-            LOC_LOGE("%s] Error from gnssNmeaCb nmea=%s length=%u description=%s", __func__,
+            LOC_LOGE("%s] Error from gnssNmeaCb nmea=%s length=%zd description=%s", __func__,
                 gnssNmeaNotification.nmea, gnssNmeaNotification.length, r.description().c_str());
         }
     }

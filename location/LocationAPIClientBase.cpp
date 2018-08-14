@@ -30,7 +30,6 @@
 #define LOG_TAG "LocSvc_APIClientBase"
 
 #include <log_util.h>
-#include <platform_lib_log_util.h>
 #include <inttypes.h>
 #include <loc_cfg.h>
 #include "LocationAPIClientBase.h"
@@ -687,7 +686,6 @@ uint32_t LocationAPIClientBase::locAPIGnssUpdateConfig(GnssConfig config)
 
         memcpy(&mConfig, &config, sizeof(GnssConfig));
 
-        uint32_t session = 0;
         RequestQueue* requests = mRequestQueues[REQUEST_CONFIG];
         uint32_t* idArray = mLocationControlAPI->gnssUpdateConfig(config);
         LOC_LOGV("%s:%d] gnssUpdateConfig return array: %p", __FUNCTION__, __LINE__, idArray);

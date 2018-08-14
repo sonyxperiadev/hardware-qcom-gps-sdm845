@@ -69,9 +69,6 @@ struct AGnssRil : public IAGnssRil {
         return false;
     }
     Return<bool> updateNetworkState(bool connected, NetworkType type, bool roaming) override;
-
- private:
-    Gnss* mGnss = nullptr;
 };
 
 }  // namespace implementation
